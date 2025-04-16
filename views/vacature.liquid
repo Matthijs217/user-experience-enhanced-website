@@ -1,0 +1,25 @@
+{% render 'partials/head.liquid', title:"vacature" %}
+{% render 'partials/header.liquid' %}
+
+<main class="vacancie-container">
+    <div>
+        <a href="/"><img src="../assets/arrow-left.svg">terug naar alle vacatures</a>
+        <h1>{{ vacatures.title }}</h1>
+        <p>{{ vacatures.locatie }}</p>
+    </div>
+    <p>{{ vacatures.description | downcase }}</p>
+</main>
+
+<aside class="vacancie-info">
+    <h2>vacature gegevens</h2>
+    <p>Salaris: €{{ vacatures.salary }} per maand</p>
+    <p>Dienstverband: {{ vacatures.employment }}</p>
+
+    <h2>locatie</h2>
+    <p>{{ vacatures.locatie }}</p>
+
+    <h2>solliciteren</h2>
+    <a class="btn" href="vacature/{{ vacature.id }}">bekijken <img src="../assets/blue-arrow-up.svg"></a>
+</aside>
+
+{% render 'partials/footer.liquid' %}

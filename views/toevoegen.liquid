@@ -1,0 +1,25 @@
+{% render 'partials/head.liquid' %}
+{% render 'partials/header.liquid' %}
+
+<h1 class="titel">vacature toevoegen</h1>
+<form class="form-container" action="/toevoegen" method="post">
+
+    <label for="titel">titel</label>
+    <input required type="text" name="title">
+
+    <label for="language">language</label>
+    <input required type="text" name="language">
+
+    <label for="agency_id">agency id fdnd=90 </label>
+    <input required type="text" name="agency_id">
+
+    <label for="hours">hours</label>
+    <input required type="text" name="hours">
+
+    <label for="location">location</label>
+    <input required type="text" name="location">
+
+    <button class="submit" type="submit">submit</button>
+</form>
+
+{% render 'partials/footer.liquid' %}

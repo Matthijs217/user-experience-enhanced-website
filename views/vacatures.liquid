@@ -1,0 +1,211 @@
+{% render 'partials/head.liquid', title: 'Vacatures' %}
+
+{% render 'partials/header.liquid' %}
+
+<aside>
+    <a href="/vacatures">
+        <img src="assets/arrow-left.svg" alt="arrow">
+        terug naar home
+    </a>
+    <h1>Vacatures</h1>
+    <p>Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer,
+        researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.</p>
+</aside>
+
+<form class="filter-button-container" method="get" action="/">
+    <div class="inputbox">
+        <label for="search">Zoek vacatures</label>
+        <input type="text" id="search" name="search">
+    </div>
+    <div class="filter-btns">
+        <div class="select-container">
+            <label hidden for="titel">provincie</label>
+            <select class="select-btn" name="provincie">
+                <option value="">provincie</option>
+                <option value="Noord-Holland">Noord-Holland</option>
+                <option value="Zuid-Holland">Zuid-Holland</option>
+                <option value="Groningen">Groningen</option>
+                <option value="Friesland">Friesland</option>
+                <option value="Drenthe">Drenthe</option>
+                <option value="Overijssel">Overijssel</option>
+                <option value="Flevoland">Flevoland</option>
+                <option value="Gelderland">Gelderland</option>
+                <option value="Utrecht">Utrecht</option>
+                <option value="Limburg">Limburg</option>
+                <option value="Noord-Brabant">Noord-Brabant</option>
+                <option value="Zeeland">Zeeland</option>
+            </select>
+            <span><img src="assets/plus.svg" alt="plus-icon"></span>
+        </div>
+
+        <div class="select-container">
+
+            <select name="soort">
+                <option value="">soort</option>
+                <option value="vacature">vacature</option>
+                <option value="stage">stage</option>
+                <span><img src="assets/plus.svg" alt="plus-icon"></span>
+            </select>
+            <span><img src="assets/plus.svg" alt="plus-icon"></span>
+        </div>
+
+        <div class="select-container">
+            <label hidden for="titel">uren</label>
+            <select name="hours">
+                <option value="">uren</option>
+                <option value="40">40</option>
+                <option value="32">32</option>
+                <option value="16">16</option>
+                <option value="anders">anders</option>
+                <span><img src="assets/plus.svg" alt="plus-icon"></span>
+            </select>
+            <span><img src="assets/plus.svg" alt="plus-icon"></span>
+        </div>
+
+        <div class="select-container">
+            <label hidden for="titel">voertaal</label>
+            <select name="voertaal">
+                <option value="">voertaal</option>
+                <option value="nl">nl</option>
+                <option value="eng">eng</option>
+                <option value="eng-nl">eng & nl</option>
+                <span><img src="assets/plus.svg" alt="plus-icon"></span>
+            </select>
+            <span><img src="assets/plus.svg" alt="plus-icon"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<main class="vacancies-container">
+    <ul class="vacancies">
+        {% for agency in vacatures %}
+        {% for vacature in agency.vacancies %}
+        <li>
+            <h2>{{ vacature.title }}</h2>
+            <div>
+                <span>ENG & NL</span>
+                <span class="agency-title">{{ agency.title|title }}</span>
+                <span>{{ vacature.hours }} uur</span>
+                <span>{{ vacature.locatie }}</span>
+            </div>
+            <a href="vacature/{{ vacature.id }}">bekijken <img src="assets/blue-arrow-up.svg" alt="pijltje"></a>
+        </li>
+        {% endfor %}
+        {% else %}
+        <p class="empty-state">Er zijn op dit moment geen vacatures beschikbaar...</p>
+        {% endfor %}
+    </ul>
+    <details class="add-vacancie">
+        <summary>Vacature toevoegen</summary>
+        <form class="form-container" action="/" method="post" data-enhanced="form-{{ id }}">
+            <button class="close-btn">close</button>
+
+            <label for="titel">titel</label>
+            <input required type="text" name="title">
+
+            <label for="language">language</label>
+            <input required type="text" name="language">
+
+            <label for="agency_id">agency id fdnd=90 </label>
+            <input required type="text" name="agency_id">
+
+            <label for="hours">hours</label>
+            <input required type="text" name="hours">
+
+            <label for="location">location</label>
+            <input required type="text" name="location">
+
+            <button class="submit" type="submit">submit</button>
+        </form>
+    </details>
+    {% if succes_message %}
+    <div class="succes-box">
+        <h6>Succes!</h6>
+        <p class="succes-message">{{ succes_message }}</p>
+    </div>
+    {% endif %}
+</main>
+
+<script type="module">
+
+// We maken hieronder aannames over wat de browser ondersteunt
+// Dus laten we deze eerst testen met Feature Detection
+// https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection
+if ('fetch' in window && 'DOMParser' in window) {
+
+  // Als er ergens op de pagina een formulier wordt gesubmit..
+  // (We maken hier gebruik van Event Delegation)
+  document.addEventListener('submit', async function(event) {
+
+    // Hou in een variabele bij welk formulier dat was
+    const form = event.target
+    const button = document.querySelector('.submit')
+
+    // Als dit formulier geen data-enhanced attribuut heeft, doe dan niks
+    // Dit doen we, zodat we sommige formulieren op de pagina kunnen 'enhancen'
+    // Data attributen mag je zelf verzinnen; dit is dus niet iets speciaals
+    // https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_HTML_problems/Use_data_attributes
+    if (!form.hasAttribute('data-enhanced')) {
+        
+      return
+    }
+
+    // Voorkom de standaard submit van de browser
+    // Let op: hiermee overschrijven we de default Loading state van de browser...
+    event.preventDefault()
+
+    button.classList.add('loading')
+    button.textContent = "Laden...";
+
+    // Doe een fetch naar de server, net als hoe de browser dit normaal zou doen
+    // Gebruik daarvoor het action en method attribuut van het originele formulier
+    // Inclusief alle formulierelementen
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new URLSearchParams(new FormData(form))
+    })
+
+    // De server redirect op de normale manier, en geeft HTML terug
+    // (De server weet niet eens dat deze fetch via client-side JavaScript gebeurde)
+    const responseText = await response.text()
+
+    // Normaal zou de browser die HTML parsen en weergeven, maar daar moeten we nu zelf iets mee
+    // Parse de nieuwe HTML en maak hiervan een nieuw Document Object Model in het geheugen
+    const parser = new DOMParser()
+    const responseDOM = parser.parseFromString(responseText, 'text/html')
+
+    // Zoek in die nieuwe DOM onze nieuwe state op, die we via Liquid hebben klaargemaakt
+    // We gebruiken hiervoor het data-enhanced attribuut, zodat we weten waar we naar moeten zoeken
+    // (Hierdoor kunnen we ook meerdere formulieren op dezelfde pagina gebruiken)
+    const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]')
+
+    // Overschrijf ons formulier met de nieuwe HTML
+    // Hier wil je waarschijnlijk de Loading state vervangen door een Success state
+    form.outerHTML = newState.outerHTML
+
+    button.classList.remove('loading')
+    button.textContent = "verstuurd";
+
+
+  })
+}
+
+const details = document.querySelector('details')
+const closeBtn = document.querySelector('.close-btn')
+
+closeBtn.addEventListener('click', function(e){
+    details.removeAttribute('open')
+})
+
+document.addEventListener('click', function(e){
+    if(!details.contains(e.target)){
+        details.removeAttribute('open')
+        console.log('closed')
+    }
+})
+
+</script>
+
+{% render 'partials/footer.liquid' %}
