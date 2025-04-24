@@ -32,15 +32,10 @@ app.get('/', async function (request, response) {
   if (hours === "16" || hours === "32" || hours === "40") {
     const vacaturesResponse = await fetch(`https://fdnd-agency.directus.app/items/dda_agencies?fields=id,title,vacancies.*&filter={%22vacancies%22:{%22hours%22:${hours}}}`)
     vacaturesResponseJSON = await vacaturesResponse.json()
-    console.log(`${hours} uur word getoond`)
   } else {
     const vacaturesResponse = await fetch(`https://fdnd-agency.directus.app/items/dda_agencies?fields=id,title,vacancies.*`)
     vacaturesResponseJSON = await vacaturesResponse.json()
-    console.log('niet 16 uur')
-    console.log('Vacatures zonder filter:', vacaturesResponseJSON);
   }
-
-  console.log('Hours parameter:', hours);
 
   response.render('vacatures.liquid', {vacatures: vacaturesResponseJSON.data, succes_message: request.query.succes });
 })
@@ -69,8 +64,8 @@ app.get('/toevoegen', async function (request, response) {
  response.render('toevoegen.liquid')
 })
 
-
 app.post('/', async function (request, response) {
+  console.log("binnen gekomen", request)
     await fetch('https://fdnd-agency.directus.app/items/dda_agencies_vacancies', {
       method: 'POST',
       body: JSON.stringify({
