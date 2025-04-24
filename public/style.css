@@ -360,12 +360,14 @@ footer {
     padding: var(--spacing-48) var(--spacing-24);
     border: var(--border);
     background-color: white;
-    & .submit {
-        align-self: center;
+    & .submit-form {
         margin-top: var(--spacing-24);
+        background-color: white;
         padding: var(--spacing-16);
         border: var(--border);
+        font-family: var(--secondary-font);
         appearance: none;
+        cursor: pointer;
         & .loading {
             opacity: .4;
         }
@@ -373,7 +375,7 @@ footer {
     & input {
         height: 30px;
         width: 300px;
-        margin-bottom: 1.5vh;
+        margin-bottom: 3vh;
     }
     & .close-btn {
         padding: var(--spacing-12);
@@ -381,6 +383,7 @@ footer {
         border: var(--border);
         margin-bottom: 2em;
         font-family: var(--secondary-font);
+        cursor: pointer;
     }
 }
 
