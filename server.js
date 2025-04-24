@@ -65,7 +65,6 @@ console.log("Ontvangen body:", request.body)
       method: 'POST',
       body: JSON.stringify({
         title: request.body.title,
-        language: request.body.language,
         agency_id: request.body.agency_id,
         hours: request.body.hours,
         locatie: request.body.location

@@ -10,5 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
             successMessage.classList.add('fade-out');
         }, 2400);
     }
+
+    const closeBtn = document.querySelector(".close-btn");
+    const details = document.querySelector("details");
+
+    closeBtn.addEventListener('click', () => {
+        details.removeAttribute('open')
+    });
+
 });
 
