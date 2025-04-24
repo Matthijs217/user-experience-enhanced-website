@@ -357,7 +357,7 @@ footer {
     justify-content: center;
     align-items: center;
     font-family: var(--secondary-font);
-    padding: var(--spacing-32) var(--spacing-12);
+    padding: var(--spacing-48) var(--spacing-24);
     border: var(--border);
     background-color: white;
     & .submit {
@@ -371,9 +371,16 @@ footer {
         }
     }
     & input {
-        height: 3vw;
-        width: 45vw;
+        height: 30px;
+        width: 300px;
         margin-bottom: 1.5vh;
+    }
+    & .close-btn {
+        padding: var(--spacing-12);
+        background-color: white;
+        border: var(--border);
+        margin-bottom: 2em;
+        font-family: var(--secondary-font);
     }
 }
 
