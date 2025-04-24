@@ -184,9 +184,11 @@
     // In de nieuwe HTML zoeken we bijvoorbeeld naar data-enhanced="true" of data-enhanced="formulier-3"
     // (Hierdoor kunnen we ook meerdere formulieren op dezelfde pagina gebruiken)
     const newState = responseDOM.querySelector('[data-enhanced="' + form.getAttribute('data-enhanced') + '"]')
-    const newVacancie = responseDOM.querySelector('.vacancies li')
+    const newVacancie = responseDOM.querySelector('.vacancies li:last-of-type')
+    const details = document.querySelector("details");
 
     form.classList.remove('loading')
+    details.removeAttribute('open')
 
     // succes state
     newState.classList.add('succes')
