@@ -43,11 +43,6 @@ app.get('/', async function (request, response) {
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
-app.post('/', async function (request, response) {
- // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
- // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
- response.redirect(303, '/')
-})
 
 app.get('/vacature/:id', async function (request, response) {
  
@@ -65,7 +60,7 @@ app.get('/toevoegen', async function (request, response) {
 })
 
 app.post('/', async function (request, response) {
-  console.log("binnen gekomen", request)
+console.log("Ontvangen body:", request.body)
     await fetch('https://fdnd-agency.directus.app/items/dda_agencies_vacancies', {
       method: 'POST',
       body: JSON.stringify({
@@ -125,7 +120,7 @@ app.post(…, async function (request, response) {
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80
-app.set('port', process.env.PORT || 8001)
+app.set('port', process.env.PORT || 8000)
 
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
