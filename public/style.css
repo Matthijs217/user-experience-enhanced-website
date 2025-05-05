@@ -388,14 +388,15 @@ footer {
 }
 
 .succes-box {
+    display: none;
     position: fixed;
     bottom: 10vh;
-    left: 2vw;
+    left: 0;
     width: max-content;
     background-color: var(--white);
     padding: var(--spacing-12);
     opacity: 0;
-    transition: opacity .7s ease;
+    transition: opacity .3s ease-in;
     border: var(--border);
     & h6 {
         color: green;
@@ -407,6 +408,7 @@ footer {
         font-size: 0.85rem;
     }
     &.show {
+        display: block;
         opacity: 1;
     }
     &.fade-out {

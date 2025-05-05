@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const successMessage = document.querySelector(".succes-box");
 
-    if (successMessage) {
+    if (successMessage && successMessage.classList.contains('show')) {
         setTimeout(() => {
             successMessage.classList.add('show');
         }, 4);
