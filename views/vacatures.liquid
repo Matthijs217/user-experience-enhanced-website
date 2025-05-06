@@ -92,10 +92,11 @@
             </div>
             <a href="vacature/{{ vacature.id }}">bekijken <img src="assets/blue-arrow-up.svg" width="16" height="16" alt="pijltje"></a>
 
-            <form action="/delete/{{ vacature.id }}" method="POST">
+            {% comment %} DELETE KNOP VOOR VACATURES {% endcomment %}
+            {% comment %} <form action="/delete/{{ vacature.id }}" method="POST">
                 <input type="hidden" name="vacature_id" value="{{ vacature.id }}">
                 <button type="submit">delete</button>
-            </form>
+            </form> {% endcomment %}
 
         </li>
         {% endfor %}
