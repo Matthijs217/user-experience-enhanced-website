@@ -76,6 +76,18 @@ console.log("Ontvangen body:", request.body)
     response.redirect(303, '/?succes=Vacature is toegevoegd!');
 })
 
+app.post('/delete/:id', async (req, res) => {
+  const id = req.params.id;
+
+  await fetch(`https://fdnd-agency.directus.app/items/dda_agencies_vacancies/${id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  });
+
+  res.redirect('/');
+});
+
+
 app.use((request, response, next) => {
  response.render('404.liquid');
 })
