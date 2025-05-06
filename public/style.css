@@ -10,6 +10,10 @@ body {
     }
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -416,4 +420,3 @@ footer {
         opacity: 0;
     }
 }
-
