@@ -405,9 +405,11 @@ footer {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     &.show {
+        display: inline-block;
         animation-play-state: running;
     }
     &.hide {
+        display: none;
         animation-play-state: paused;
     }
   }
