@@ -7,7 +7,11 @@
         <h2>{{ vacatures.title }}</h2>
         <p>{{ vacatures.locatie }}</p>
     </div>
-    <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="{{ vacatures.width }}" height="{{ vacatures.height }}" alt="sfeerfoto">
+    <picture>
+        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?format=avif">
+        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?format=webp">
+        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="{{ vacatures.width }}" height="{{ vacatures.height }}" alt="sfeerfoto">
+    </picture>
     <p>{{ vacatures.description | downcase }}</p>
 </main>
 
