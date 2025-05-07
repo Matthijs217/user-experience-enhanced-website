@@ -14,15 +14,46 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/enhance
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
+
+Ik heb een responsive, mobile first en dynamische DDA website gemaakt, dit is een site voor het tonen van de vacatures die uit de database komen. De vacatures hebben een aparte detailpagina en er kunnen vacatures worden toegevoegd door opdrachtgevers.
+
+[Bekijk hier de live website](https://user-experience-enhanced-website-9lma.onrender.com/)
+
+<img width="293" alt="Scherm­afbeelding 2025-05-07 om 11 44 00" src="https://github.com/user-attachments/assets/7245eac4-aa3b-4daa-836c-4fddcb193a41" />
+<img width="298" alt="Scherm­afbeelding 2025-05-07 om 12 19 30" src="https://github.com/user-attachments/assets/583fa154-7f2b-4429-8897-25d332d67952" />
+
 ## Beschrijving
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar je live site 🌐-->
-Ik heb een responsive, mobile first en dynamische DDA website gemaakt, dit is een site voor het tonen van de vacatures die uit de database komen. De vacatures hebben een aparte detailpagina en er kunnen vacatures worden toegevoegd door opdrachtgevers.
+Op de vacature site (de main pagina) staat een overzicht van alle geplaatste vacatures van dat moment. Per vacature staat er een vacature titel, de taal, het bedrijf, het aantal uren en de locatie. Ook is er een mogelijkheid om de vacature te "bekijken" om er meer van te zien. Dit stuurt je dan naar de detailpagina van de vacature.
 
-https://user-experience-enhanced-website-9lma.onrender.com/
-<img width="1103" alt="Scherm­afbeelding 2025-05-07 om 11 44 00" src="https://github.com/user-attachments/assets/7245eac4-aa3b-4daa-836c-4fddcb193a41" />
+https://github.com/user-attachments/assets/bc603de4-fe45-4e67-9697-c220de975b15
 
+Op de detailpagina staat dan wat meer uitleg over de vacature en de mogelijk heid om te solliciteren!
+
+https://github.com/user-attachments/assets/3467891b-c93c-404a-9111-2943a0a0cfb4
+
+De website is mobile first gebouwd. Op het kleinste formaat is het een one-column-layout. Hoe groter de pagina word, hoe meer er naast elkaar komt en ruimte ontstaat en word uitgelijnd.
+
+<img width="882" alt="Scherm­afbeelding 2025-05-07 om 12 28 11" src="https://github.com/user-attachments/assets/d592c990-3ca3-4aec-bfba-7d27a4d0c7ab" />
+
+
+**Lighthouse:**
+De pagina scoort heel hoog, op een paar dingetjes na die het weerhouden van 100 te zijn.
+
+<img width="309" alt="Scherm­afbeelding 2025-05-07 om 12 33 43" src="https://github.com/user-attachments/assets/1a973957-232e-4e68-8ac0-c089af668a4b" />
+
+## Ontwerp
+
+Ik heb het ontwerp van de huisstijl aangehouden. Deze was erg uitgebreid en duidelijk. Alles draaide om "8", dus afstanden en alles werden steeds vermenigvuldigd met 8. Een heel strak design met veel lijnen, weinig kleur en heel strak.
+
+<img width="500" alt="Scherm­afbeelding 2025-05-07 om 12 30 41" src="https://github.com/user-attachments/assets/50435a25-c240-4feb-9529-34c0b57b7004" />
+
+
+De website heeft amper kleur dus voldoet ook makkelijk aan de contrast analyser
+
+<img width="218" alt="Scherm­afbeelding 2025-05-07 om 12 31 33" src="https://github.com/user-attachments/assets/3cf2277c-79ee-4123-bdf9-4807a8ccb4ad" />
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
@@ -50,6 +81,8 @@ Een client side script dat ervoor zorgt dat als jij de vacature wil plaatsen dat
 
 * [`{% for vacature in agency.vacancies %}]`(https://github.com/Matthijs217/user-experience-enhanced-website/blob/main/views/vacatures.liquid#L83-L105):
 Die zorgt ervoor dat de vacatures uit de database worden omgezet in html form, door middel van de liquid template. Die toont dan de vacatures in een list.
+
+
 
 
 ## Installatie
