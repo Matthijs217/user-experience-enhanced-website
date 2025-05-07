@@ -14,6 +14,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/enhance
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
+# Inleiding
 
 Ik heb een responsive, mobile first en dynamische DDA website gemaakt, dit is een site voor het tonen van de vacatures die uit de database komen. De vacatures hebben een aparte detailpagina en er kunnen vacatures worden toegevoegd door opdrachtgevers.
 
@@ -22,7 +23,7 @@ Ik heb een responsive, mobile first en dynamische DDA website gemaakt, dit is ee
 <img width="293" alt="Scherm­afbeelding 2025-05-07 om 11 44 00" src="https://github.com/user-attachments/assets/7245eac4-aa3b-4daa-836c-4fddcb193a41" />
 <img width="298" alt="Scherm­afbeelding 2025-05-07 om 12 19 30" src="https://github.com/user-attachments/assets/583fa154-7f2b-4429-8897-25d332d67952" />
 
-## Beschrijving
+# Beschrijving
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar je live site 🌐-->
@@ -44,7 +45,7 @@ De pagina scoort heel hoog, op een paar dingetjes na die het weerhouden van 100 
 
 <img width="309" alt="Scherm­afbeelding 2025-05-07 om 12 33 43" src="https://github.com/user-attachments/assets/1a973957-232e-4e68-8ac0-c089af668a4b" />
 
-## Ontwerp
+# Ontwerp
 
 Ik heb het ontwerp van de huisstijl aangehouden. Deze was erg uitgebreid en duidelijk. Alles draaide om "8", dus afstanden en alles werden steeds vermenigvuldigd met 8. Een heel strak design met veel lijnen, weinig kleur en heel strak.
 
@@ -55,7 +56,7 @@ De website heeft amper kleur dus voldoet ook makkelijk aan de contrast analyser
 
 <img width="218" alt="Scherm­afbeelding 2025-05-07 om 12 31 33" src="https://github.com/user-attachments/assets/3cf2277c-79ee-4123-bdf9-4807a8ccb4ad" />
 
-## Gebruik
+# Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 Als werk zoekende, wil ik een overzicht kunnen zien van de aangeboden vacatures. Wat snelle belangrijke informatie en een manier om meer te zien. Dit is mogelijk door het mooie responsive duidelijke design wat de vacatures mooi toont, met snelle informatie over de vacature en een mogelijkheid om meer informatie te lezen op de detailpagina.
 
@@ -64,7 +65,7 @@ Als opdrachtgever wil ik een vacature kunnen plaatsen, zodat ik mensen kan werve
 <img width="1068" alt="Scherm­afbeelding 2025-05-07 om 11 48 28" src="https://github.com/user-attachments/assets/f61a69a5-ef77-4a0b-b57f-e8389d103802" />
 
 
-## Kenmerken
+# Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
 De website is een dynamische, responsive & mobile first website. Gemaakt met Liquid.JS, Node.JS, JavaScript en CSS. 
@@ -85,7 +86,7 @@ Die zorgt ervoor dat de vacatures uit de database worden omgezet in html form, d
 
 
 
-## Installatie
+# Installatie
 Zoals beschreven bij Kenmerken is bij dit project gebruik gemaakt van NodeJS. Om aan dit project te werken moet NodeJS geïnstalleerd zijn. Eenmal geïnstalleerd kan het project geopend worden in de code editor.
 
 Voer in de terminal `npm install` uit om alle benodigdheden te installeren.
