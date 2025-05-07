@@ -19,7 +19,7 @@
         }
         & p {
             font-family: var(--secondary-font);
-            font-size: .75rem;
+            font-size: .895rem;
         }
     }
     & h1 {
@@ -56,3 +56,20 @@
     }
 }
 
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    border-top: var(--border);
+    & h2 {
+    }
+    & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .25em;
+    }
+}

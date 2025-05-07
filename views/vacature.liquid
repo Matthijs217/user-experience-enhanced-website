@@ -4,7 +4,7 @@
 <main class="vacancie-container">
     <div>
         <a href="/"><img src="../assets/arrow-left.svg">terug naar alle vacatures</a>
-        <h2 style="view-transition-name: vacature-{{ vacature.id }}">{{ vacatures.title }}</h2>
+        <h2>{{ vacatures.title }}</h2>
         <p>{{ vacatures.locatie }}</p>
     </div>
     <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="{{ vacatures.width }}" height="{{ vacatures.height }}" alt="sfeerfoto">
@@ -13,11 +13,14 @@
 
 <aside class="vacancie-info">
     <h2>vacature gegevens</h2>
-    <p>Salaris: €{{ vacatures.salary }} per maand</p>
+    {% if vacatures.salary %}
+        <p>Salaris: €{{ vacatures.salary }} per maand</p>
+    {% else %}
+        <p>Salaris: €3500 per maand</p>
+    {% endif %}
     <p>Dienstverband: {{ vacatures.employment }}</p>
 
-    <h2>locatie</h2>
-    <p>{{ vacatures.locatie }}</p>
+    <p>Locatie:  {{ vacatures.locatie }}</p>
 
     <h2>solliciteren</h2>
     <a class="btn" href="vacature/{{ vacature.id }}">bekijken <img src="../assets/blue-arrow-up.svg"></a>
