@@ -64,10 +64,25 @@ aside {
     gap: 2em;
     padding: var(--spacing-32) var(--spacing-16);
     border-top: var(--border);
-    & p {
+    & dl {
+        display: flex;
+        flex-direction: column;
         font-size: 1.25em;
+        gap: 1.25em;
+        & dt {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        & dd {
+            margin-left: var(--spacing-72);
+        }
+        & div {
+            display: flex;
+            flex-direction: column;
+        }
     }
     & a {
+        place-self: center;
         display: flex;
         justify-content: center;
         align-items: center;

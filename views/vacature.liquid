@@ -17,18 +17,58 @@
 
 <aside class="vacancie-info">
     <h2>vacature gegevens</h2>
-    {% if vacatures.salary %}
-        <p>Salaris: €{{ vacatures.salary }} per maand</p>
-    {% else %}
-        <p>Salaris: €3500 per maand</p>
-    {% endif %}
-    <p>Dienstverband: {{ vacatures.employment }}</p>
+    
 
-    <p>Locatie:  {{ vacatures.locatie }}</p>
+    <dl>
+        {% if vacatures.salary %}
+            <div>
+                <dt>Salaris:</dt> <dd>€{{ vacatures.salary }} per maand</dd>
+            </div>
+        {% else %}
+             <div>
+                <dt>Salaris:</dt> <dd>€3500 per maand</dd>
+            </div>
+        {% endif %}
 
-    <p>Datum geplaatst:  {{ vacatures.date_posted |  date: "%B %d, %Y" }}</p>
+        {% if vacatures.employment %}
+            <div>
+                <dt>Dienstverband: </dt>
+                <dd>{{ vacatures.employment }}</dd>
+            </div>
+        {% else %}
+            <div>
+                <dt>Dienstverband: </dt>
+                <dd>Fulltime</dd>
+            </div>
+        {% endif %}
 
-    <a class="btn" href="vacature/{{ vacature.id }}">Sollicitatie bekijken <img src="../assets/blue-arrow-up.svg"></a>
+        {% if vacatures.locatie %}
+            <div>
+                <dt>Locatie:</dt>
+                <dd>{{ vacatures.locatie }}</dd>
+            </div>
+        {% else %}
+            <div>
+                <dt>Locatie:</dt>
+                <dd>Niet bekend</dd>
+            </div>
+        {% endif %}
+
+        {% if vacatures.date_posted %}
+            <div>
+                <dt>Datum geplaatst: </dt>
+                <dd>{{ vacatures.date_posted |  date: "%B %d, %Y" }}</dd>
+            </div>
+        {% else %}
+            <div>
+                <dt>Datum geplaatst: </dt>
+                <dd>Niet bekend</dd>
+            </div>
+        {% endif %}
+        
+
+        <a class="btn" href="vacature/{{ vacature.id }}">Sollicitatie bekijken <img src="../assets/blue-arrow-up.svg"></a>
+    <dl> 
 </aside>
 
 {% render 'partials/footer.liquid' %}
