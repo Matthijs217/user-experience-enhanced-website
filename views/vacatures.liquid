@@ -19,8 +19,8 @@
     </div>
     <div class="filter-btns">
         <div class="select-container">
-            <label hidden for="provincie">provincie</label>
-            <select class="select-btn" name="provincie">
+            <label for="provincie" class="visually-hidden">Kies een provincie</label>
+            <select id="provincie" name="provincie" required>
                 <option value="">provincie</option>
                 <option value="Noord-Holland">Noord-Holland</option>
                 <option value="Zuid-Holland">Zuid-Holland</option>
@@ -39,8 +39,8 @@
         </div>
 
         <div class="select-container">
-
-            <select name="soort">
+            <label for="soort" class="visually-hidden">Kies een soort vacature</label>
+            <select id="soort" name="soort">
                 <option value="">soort</option>
                 <option value="vacature">vacature</option>
                 <option value="stage">stage</option>
@@ -50,8 +50,8 @@
         </div>
 
         <div class="select-container">
-            <label hidden for="titel">uren</label>
-            <select name="hours">
+            <label for="hours" class="visually-hidden">Kies het aantal uren</label>
+            <select id="hours" name="hours">
                 <option value="">uren</option>
                 <option value="40">40</option>
                 <option value="32">32</option>
@@ -63,8 +63,8 @@
         </div>
 
         <div class="select-container">
-            <label hidden for="titel">voertaal</label>
-            <select name="voertaal">
+            <label for="voertaal" class="visually-hidden">Kies de voertaal</label>
+            <select id="voertaal" name="voertaal">
                 <option value="">voertaal</option>
                 <option value="nl">nl</option>
                 <option value="eng">eng</option>
@@ -109,17 +109,21 @@
         <form class="form-container" action="/" method="post" data-enhanced="form">
             <button class="close-btn" type="button">close</button>
 
-            <label for="titel">titel</label>
+            <label for="titel">titel
             <input required type="text" name="title">
+            </label>
 
-            <label for="agency_id">agency id fdnd=90 </label>
+            <label for="agency_id">agency id fdnd=90
             <input required type="text" name="agency_id">
+            </label>
 
-            <label for="hours">hours</label>
+            <label for="hours">hours
             <input required type="text" name="hours">
+            </label>
 
-            <label for="location">location</label>
+            <label for="location">location
             <input required type="text" name="location">
+            </label>
 
             <button class="submit-form" type="submit">
                 <div class="loader"></div>
@@ -134,6 +138,8 @@
     </div>
 
 </main>
+
+<script src="../script.js"></script>
 
 <script type="module">
 
