@@ -8,9 +8,9 @@
         <p>{{ vacatures.locatie }}</p>
     </div>
     <picture>
-        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?format=avif">
-        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?format=webp">
-        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="{{ vacatures.width }}" height="{{ vacatures.height }}" alt="sfeerfoto">
+        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=avif">
+        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=webp">
+        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="482" height="367" alt="sfeerfoto">
     </picture>
     <p>{{ vacatures.description | downcase }}</p>
 </main>

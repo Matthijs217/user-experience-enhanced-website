@@ -29,8 +29,8 @@
     }
     & .sfeerphoto {
         border-top: var(--border);
-        width: 100%;
-        height: 300px;
+        width: 80vw;
+        height: 400px;
         object-fit: cover;
         padding: var(--spacing-16);
     }
