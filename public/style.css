@@ -180,6 +180,7 @@ nav {
         margin: var(--spacing-32);
         
         & summary {
+            cursor: pointer;
             font-family: var(--secondary-font);
             display: flex;
             justify-content: center;
