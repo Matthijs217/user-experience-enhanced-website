@@ -421,6 +421,7 @@ footer {
     border-top: 3px solid #3498db;
     width: 20px;
     height: 20px;
+    transition: .2s ease-out;
     animation: spin 2s linear infinite;
     &.show {
         display: inline-block;
