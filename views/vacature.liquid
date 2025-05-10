@@ -11,10 +11,12 @@
         <h2>{{ vacatures.title }}</h2>
         <p>{{ vacatures.locatie }}</p>
     </div>
+    {% comment %} Door een height en width mee te geven aan de foto zorg je ervoor dat de browser van tevoren weet welke size die moet inladen. 
+     Hierdoor voorkom je een layout shift als de foto later inlaad. {% endcomment %}
     <picture>
         <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=avif">
         <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=webp">
-        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="482" height="367" alt="sfeerfoto">
+        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="482" height="367" alt="sfeerfoto"> 
     </picture>
     <p>{{ vacatures.description | downcase }}</p>
 </main>
