@@ -14,16 +14,27 @@
     {% comment %} Door een height en width mee te geven aan de foto zorg je ervoor dat de browser van tevoren weet welke size die moet inladen. 
      Hierdoor voorkom je een layout shift als de foto later inlaad. {% endcomment %}
     <picture>
-        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=avif">
-        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=482&format=webp">
-        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}" width="482" height="367" alt="sfeerfoto"> 
+        {% comment %} mobiel onder 480px {% endcomment %}
+        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=240&width=320&format=avif">
+        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=240&width=320&format=webp">
+
+        <source media="(min-width: 480px)" type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=480&format=avif">
+        <source media="(min-width: 480px)" type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=480&format=webp">
+
+        <source media="(min-width: 768px)" type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=450&width=600&format=avif">
+        <source media="(min-width: 768px)" type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=450&width=600&format=webp">
+
+        <source media="(min-width: 1024px)" type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=600&width=800&format=avif">
+        <source media="(min-width: 1024px)" type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=600&width=800&format=webp">
+
+        <!-- Backup foto -->
+        <img class="sfeerphoto" src="https://fdnd-agency.directus.app/assets/{{ vacatures.photo }}?height=360&width=480" width="480" height="360" alt="sfeerfoto">
     </picture>
     <p>{{ vacatures.description | downcase }}</p>
 </main>
 
 <aside class="vacancie-info">
     <h2>vacature gegevens</h2>
-    
 
     <dl>
         {% if vacatures.salary %}
